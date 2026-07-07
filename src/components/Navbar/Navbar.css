@@ -1,0 +1,166 @@
+.navbar {
+  /* border: 3px solid rgb(162, 255, 2); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed !important;
+  inset: 0;
+  z-index: 10;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+li {
+  cursor: pointer;
+}
+.nav-bg-white {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar .nav-links a {
+  color: white !important;
+}
+.navbar .nav-links li .search-icon {
+  background-color: green;
+}
+.navbar .nav-container {
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+  height: 100%;
+  /* border: 3px solid rgb(255, 10, 2); */
+}
+.navbar .lemon-logo {
+  /* border: 3px solid rgb(228, 149, 13); */
+  height: 100%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.navbar .lemon-logo img {
+  width: 100px !important;
+}
+
+.navbar.nav-bg-white .lemon-logo h4,
+.navbar.nav-bg-white .nav-links a,
+.navbar.nav-bg-white .nav-links li .search-icon {
+  color: black !important;
+}
+.navbar .lemon-logo h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 10px;
+  color: white;
+}
+.search-icon {
+  /* border: 2px solid red; */
+}
+.navbar .nav-links {
+  /* border: 3px solid rgb(0, 0, 0); */
+  list-style: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.navbar .nav-links .link {
+  text-decoration: none;
+  /* border: 3px solid rgb(16, 228, 48); */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.navbar .nav-links a:hover,
+.search-icon:hover {
+  background-color: rgba(144, 211, 144, 0.299);
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+.navbar .nav-links a,
+.search-icon {
+  color: var(--black);
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  /* border: 3px solid rgb(3, 47, 242); */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .nav-links .link.active a {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+.burgermenu {
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+.navbar .nav-links.showMenu {
+  right: 0;
+}
+.navbar .burgermenu.whiteBurger {
+  color: whitesmoke;
+}
+
+/* MEDIA QUERIES  */
+
+@media (max-width: 1200px) {
+  .navbar .lemon-logo {
+    /* border: 3px solid rgb(228, 149, 13); */
+    /* width: 140px; */
+  }
+  .navbar .nav-links a {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+@media (max-width: 1100px) {
+  .navbar .nav-links a {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+@media (max-width: 960px) {
+  .navbar .nav-links {
+    /* border: 3px solid rgb(0, 0, 0); */
+    position: fixed;
+    right: -300px;
+    bottom: 0;
+    padding: 70px 0 0 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--primary-color);
+    transition: 0.5s;
+  }
+  .navbar .nav-links .link {
+    /* border: 4px solid rgb(255, 191, 0); */
+    width: 100%;
+  }
+  .navbar .nav-links a {
+    color: white;
+    /* border: 3px solid rgb(91, 255, 3); */
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+  .burgermenu {
+    display: block;
+    position: fixed;
+    right: 20px;
+    z-index: 11;
+    color: rgb(0, 0, 0);
+  }
+}
+
+/* END OF MEDIA QUERIES  */

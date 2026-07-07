@@ -1,0 +1,42 @@
+#footer {
+  /* border: 4px solid rgb(190, 156, 5); */
+  background-color: rgb(33, 36, 41);
+  color: white;
+}
+#footer img {
+  /* border: 4px solid rgb(190, 156, 5); */
+  height: 90% !important;
+  width: 95% !important;
+}
+@media (max-width: 1250px) {
+  #footer .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+  #footer .gov-seal-img-box {
+    margin-bottom: 20px;
+  }
+  #footer .col {
+    display: grid;
+    place-items: center;
+  }
+}
+@media (max-width: 700px) {
+  #footer .grid-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  #footer .gov-seal-img-box {
+    margin-bottom: 20px;
+  }
+  .copyright {
+    text-align: center;
+  }
+}
+
+#footer li a {
+  color: rgba(255, 255, 255, 0.348);
+}
+#footer li a:hover {
+  color: rgba(255, 255, 255, 0.493);
+}

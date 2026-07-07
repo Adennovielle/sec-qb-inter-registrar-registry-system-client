@@ -1,0 +1,125 @@
+.hero {
+  min-height: calc(43vh);
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../assets/login-overlay.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero .hero-center-text {
+  font-size: 60px !important;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+.hero .hero-center-text::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 6px;
+  /* background: linear-gradient(90deg, #00b050, #34d399); */
+  background-color: rgb(0, 137, 72) !important;
+}
+.hero .left-hero {
+  /* border: 3px solid white; */
+  display: flex;
+  flex-direction: column;
+}
+.hero .left-hero .hero-title {
+  font-size: var(--display-title);
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+.hero .left-hero .subtitle {
+  font-size: var(--subtitle);
+  color: white;
+}
+.hero .left-hero .hero-description {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.hero .right-hero {
+  /* border: 3px solid blue; */
+  width: 40%;
+  height: 530px;
+  border-radius: 20px;
+}
+.hero .right-hero img {
+  height: 100%;
+  object-fit: cover;
+  transition: 0.2s;
+}
+.hero .right-hero img:hover {
+  transform: scale(1.05);
+}
+.hero .primary-btn {
+  margin-top: 20px;
+}
+
+/* MEDIA QUERIES  */
+
+@media (max-width: 1100px) {
+  .hero .left-hero .hero-title {
+    font-size: 75px;
+  }
+}
+@media (max-width: 1000px) {
+  .hero .left-hero .hero-title {
+    font-size: 65px;
+  }
+  .hero .left-hero .hero-description {
+    font-size: 15px;
+  }
+}
+@media (max-width: 850px) {
+  .hero .left-hero {
+    text-align: center;
+  }
+  .hero .left-hero .primary-btn {
+    align-self: center;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-bottom: 40px;
+  }
+  .hero .right-hero {
+    /* border: 3px solid blue; */
+    width: 70%;
+    margin-top: 30px;
+    height: 430px;
+  }
+}
+@media (max-width: 600px) {
+  .hero .left-hero .hero-title {
+    font-size: 45px;
+  }
+  .hero .left-hero .subtitle {
+    font-size: 30px;
+  }
+  .hero .left-hero .hero-description {
+    font-size: 12px;
+  }
+  .hero .left-hero .primary-btn {
+    font-size: 12px;
+  }
+  .hero .right-hero {
+    /* border: 3px solid blue; */
+    width: 90%;
+    height: 360px;
+  }
+}
+
+/* END OF MEDIA QUERIES  */
