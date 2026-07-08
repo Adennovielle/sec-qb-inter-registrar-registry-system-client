@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./QualifiedBuyerVerification.css";
 import { useNavigate } from "react-router-dom";
 
 const QualifiedBuyerVerification = () => {
+  const [qbid, setQbid] = useState("");
+  const [searchError, setSearchError] = useState("");
+
+  const handleClear = () => {
+    setQbid("");
+  };
+  const handleSearch = () => {
+    if (!qbid.trim()) {
+      setSearchError("Please enter a QBID.");
+      return;
+    } else {
+      setSearchError("Searching...");
+    }
+  };
   const navigate = useNavigate();
   return (
     <section
@@ -28,21 +42,35 @@ const QualifiedBuyerVerification = () => {
                 Qualified Buyer Verification
               </span>
             </h4>
-
             <small className="text-secondary mb-4">
               Securities and Exchange Commission – Qualified Buyer
               Inter-Registrar Registry System
             </small>
-
             <input
+              value={qbid}
+              onChange={(e) => setQbid(e.target.value)}
               type="text"
               className="form-control form-control-lg mb-3"
               placeholder="Enter Qualified Buyer Identification Number (QBID)"
             />
-
-            <button className="btn btn-success px-4">Search</button>
-
-            <button className="btn btn-light border px-4 ms-2">Clear</button>
+            <button className="btn btn-success px-4" onClick={handleSearch}>
+              Search
+            </button>
+            <button
+              className="btn btn-light border px-4 ms-2"
+              onClick={handleClear}
+            >
+              Clear
+            </button>
+            <div
+              className={`${
+                searchError === "Searching..."
+                  ? "text-secondary"
+                  : "text-danger"
+              } mt-2`}
+            >
+              {searchError}
+            </div>{" "}
           </div>
         </div>
       </div>

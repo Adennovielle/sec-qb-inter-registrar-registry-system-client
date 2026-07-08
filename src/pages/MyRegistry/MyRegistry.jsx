@@ -1,5 +1,5 @@
 import React from "react";
-import "./OrderOnline.css";
+import "./MyRegistry.css";
 const OrderOnline = () => {
   return (
     <div>

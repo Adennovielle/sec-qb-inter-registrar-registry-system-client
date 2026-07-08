@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "./Hero/Hero";
 import QualifiedBuyerVerification from "./QualifiedBuyerVerification/QualifiedBuyerVerification";
 import Testimonials from "./Testimonials/Testimonials";
@@ -22,7 +22,16 @@ export const Home = () => {
     <>
       <Hero />
       <QualifiedBuyerVerification />
+      <>
+        {/* <button className="btn btn-success" onClick={() => setOpenSearch(true)}>
+          Open Search
+        </button> */}
 
+        {/* <HomeSearchBar
+          isOpen={openSearch}
+          onClose={() => setOpenSearch(false)}
+        /> */}
+      </>
       {/* <div className="container">
         <Highlights />
         <Testimonials />

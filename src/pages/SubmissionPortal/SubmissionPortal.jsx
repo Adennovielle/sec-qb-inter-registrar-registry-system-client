@@ -1,5 +1,5 @@
 import React from "react";
-import "./Reservations.css";
+import "./SubmissionPortal.css";
 import BookingForm from "../../components/BookingForm/BookingForm";
 const Reservations = () => {
   return (

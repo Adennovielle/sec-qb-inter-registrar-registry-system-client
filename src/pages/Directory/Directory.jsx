@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Menu.css";
+import "./Directory.css";
 import { menuItems } from "../../components/menuDB";
 import { useLocation } from "react-router-dom";
 

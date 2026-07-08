@@ -44,6 +44,12 @@ img {
 }
 
 /* UTILITY CLASSES */
+.cursor-default {
+  cursor: default;
+}
+.off-white-text {
+  color: rgba(255, 255, 255, 0.348) !important;
+}
 .bg-sec-color {
   background-color: var(--tertiary-color);
 }

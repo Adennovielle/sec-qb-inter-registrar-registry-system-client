@@ -5,10 +5,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Auth from "./pages/Auth/Auth";
 import { Home } from "./components/Home";
-import Reservations from "./pages/Reservations/Reservations";
-import OrderOnline from "./pages/Order-online/OrderOnline";
+import Reservations from "./pages/SubmissionPortal/SubmissionPortal";
+import MyRegistry from "./pages/MyRegistry/MyRegistry";
+import SubMissionPortal from "./pages/SubMissionPortal/SubMissionPortal";
+import Directory from "./pages/Directory/Directory";
 import SignUp from "./pages/SignUp/SignUp";
-import Menu from "./pages/Menu/Menu";
+import Menu from "./pages/Directory/Directory";
 function App() {
   return (
     <BrowserRouter>
@@ -16,9 +18,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/reservations" element={<Reservations />} />
-        <Route path="/order-online" element={<OrderOnline />} />
+        <Route path="/my-registry" element={<MyRegistry />} />
+        <Route path="/submission-portal" element={<SubMissionPortal />} />
+        <Route path="/directory" element={<Directory />} />
         <Route path="/auth" element={<Auth />} />
+        {/* <Route path="/reservations" element={<Reservations />} /> */}
         <Route path="/signup" element={<SignUp />} />
       </Routes>
 

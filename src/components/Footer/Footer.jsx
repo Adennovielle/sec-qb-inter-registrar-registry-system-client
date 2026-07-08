@@ -1,88 +1,64 @@
 import React from "react";
 import "./Footer.css";
 import govSeal from "../../assets/gov-ph-seal-footer.png";
+import FooterSection from "./FooterSections";
+import ContactColumn from "./ContactColumn";
+import { MdPhone, MdEmail, MdLocationOn, MdAccessTime } from "react-icons/md";
+import { footerSections } from "./footerData";
 
 const Footer = () => {
+  const contactInfoData = [
+    {
+      icon: MdPhone,
+      text: "(02) 8818-8178",
+    },
+    {
+      icon: MdEmail,
+      text: "ipsd_msrd@sec.gov.ph",
+    },
+    {
+      icon: MdLocationOn,
+      text: (
+        <>
+          SEC Headquarters,
+          <br />
+          7907 Makati Avenue,
+          <br />
+          Salcedo Village, Bel-Air,
+          <br />
+          Makati City 1227, Philippines
+        </>
+      ),
+    },
+    {
+      icon: MdAccessTime,
+      text: (
+        <>
+          Monday - Friday
+          <br />
+          8:00 AM – 5:00 PM
+        </>
+      ),
+    },
+  ];
+
   return (
     <footer id="footer" className="bg-dark pt-5">
       <div className="container">
-        <div className="row">
+        <div className="grid-box row row-cols-1">
           {/* Government Seal */}
-          <div className="col-12 col-md-6 col-lg-3">
+          <div className="col footer-img-box">
             <img
               src={govSeal}
               alt="Government Seal"
               className="img-fluid mb-3 opacity-50"
             />
           </div>
+          <FooterSection footerSections={footerSections} />
 
-          {/* Republic of the Philippines */}
-          <div className="col-12 col-md-6 col-lg-3">
-            <h5 className="fw-bold">Republic of the Philippines</h5>
-            <p
-              className="text-white text-start mb-0"
-              style={{ fontSize: "15px" }}
-            >
-              All content is in the public domain unless
-              <br />
-              otherwise stated.
-            </p>
-          </div>
-
-          {/* About SEC-EASE */}
-          <div className="col-12 col-md-6 col-lg-3">
-            <h5 className="fw-bold">About SEC-EASE</h5>
-
-            <p className="text-white text-start " style={{ fontSize: "15px" }}>
-              Exceptional and Alternative Submissions Environment (EASE)
-            </p>
-
-            <ul className="list-unstyled">
-              <li>
-                <a href="https://www.sec.gov.ph/">SEC Website</a>
-              </li>
-              <li>
-                <a href="https://www.gov.ph/">GOVPH</a>
-              </li>
-              <li>
-                <a href="#">Open Data Portal</a>
-              </li>
-              <li>
-                <a href="https://www.officialgazette.gov.ph/">
-                  Official Gazette
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* SEC Online Services */}
-          <div className="col-12 col-md-6 col-lg-3">
-            <h5 className="fw-bold">SEC Online Services</h5>
-
-            <ul className="list-unstyled">
-              <li>
-                <a href="https://www.sec.gov.ph/sec-esecure/">eSECURE</a>
-              </li>
-              <li>
-                <a href="https://esparc.sec.gov.ph/">eSPARC</a>
-              </li>
-              <li>
-                <a href="https://secexpress.ph">eFAST</a>
-              </li>
-              <li>
-                <a href="https://esearch.sec.gov.ph/user/login">eSEARCH</a>
-              </li>
-              <li>
-                <a href="https://espaysec.sec.gov.ph/payment-portal/home">
-                  eSPAYSEC
-                </a>
-              </li>
-              <li>
-                <a href="https://mc28.sec.gov.ph/mc28-list-temp/SecuritiesandExchangeCommission">
-                  MC28 Submission
-                </a>
-              </li>
-            </ul>
+          <div className="col">
+            <h5 className="fw-bold">Get in Touch</h5>
+            <ContactColumn contactInfoData={contactInfoData} />
           </div>
         </div>
       </div>

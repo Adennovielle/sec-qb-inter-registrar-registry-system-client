@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoSearchSharp } from "react-icons/io5";
+import HomeSearchBar from "../HomeSearchBar/HomeSearchBar";
 
 const Navbar = () => {
+  const location = useLocation();
+  const [openSearch, setOpenSearch] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 20) {
@@ -22,15 +27,13 @@ const Navbar = () => {
     };
   }, []);
 
-  const [active, setActive] = useState(
-    () => localStorage.getItem("activeNavLink") || "home",
-  );
+  // const [active, setActive] = useState(
+  //   () => localStorage.getItem("activeNavLink") || "home",
+  // );
 
-  const [showMenu, setShowMenu] = useState(false);
-
-  useEffect(() => {
-    localStorage.setItem("activeNavLink", active);
-  }, [active]);
+  // useEffect(() => {
+  //   localStorage.setItem("activeNavLink", active);
+  // }, [active]);
 
   const hideMenu = () => {
     setShowMenu(!showMenu);
@@ -50,13 +53,8 @@ const Navbar = () => {
         </Link>
 
         <ul className={`nav-links ${showMenu ? "showMenu" : ""}`}>
-          <li
-            onClick={() => setActive("QCIDSearch")}
-            className={`link ${active === "QCIDSearch" ? "active" : ""}`}
-          >
-            <Link to="/" state={{ scrollTo: "QCIDSearch", offset: -80 }}>
-              QCIDSearch
-            </Link>
+          <li className={`link ${location.pathname === "/" ? "active" : ""}`}>
+            <Link to="/">QBID Search</Link>
           </li>
 
           {/* <li
@@ -85,7 +83,7 @@ const Navbar = () => {
             </Link>
           </li> */}
 
-          <li
+          {/* <li
             onClick={() => setActive("MyRegistry")}
             className={`link ${active === "MyRegistry" ? "active" : ""}`}
           >
@@ -96,6 +94,14 @@ const Navbar = () => {
             >
               My Registry
             </Link>
+          </li> */}
+
+          <li
+            className={`link ${
+              location.pathname === "/My-Registry" ? "active" : ""
+            }`}
+          >
+            <Link to="/My-Registry">My Registry</Link>
           </li>
 
           {/* <li
@@ -111,43 +117,31 @@ const Navbar = () => {
             </Link>
           </li> */}
           <li
-            onClick={() => setActive("Submission Portal")}
-            className={`link ${active === "Submission Portal" ? "active" : ""}`}
+            className={`link ${
+              location.pathname === "/Submission-Portal" ? "active" : ""
+            }`}
           >
-            <Link to="/Submission-Portal" className="reactrouter-link">
-              Submission Portal
-            </Link>
+            <Link to="/Submission-Portal">Submission Portal</Link>
           </li>
 
           <li
-            onClick={() => setActive("Directory")}
-            className={`link ${active === "Directory" ? "active" : ""}`}
+            className={`link ${
+              location.pathname === "/Directory" ? "active" : ""
+            }`}
           >
-            <Link to="/Directory" className="reactrouter-link">
-              Directory
-            </Link>
+            <Link to="/Directory">Directory</Link>
           </li>
 
-          {/* <li
-            onClick={() => setActive("order-online")}
-            className={`link ${active === "order-online" ? "active" : ""}`}
-          >
-            <Link to="/order-online" className="reactrouter-link">
-              Order Online
-            </Link>
-          </li> */}
-
           <li
-            onClick={() => setActive("auth")}
-            className={`link ${active === "auth" ? "active" : ""}`}
+            className={`link ${location.pathname === "/auth" ? "active" : ""}`}
           >
             <Link to="/auth" className="reactrouter-link">
               Login
             </Link>
           </li>
-          <li class="link search-icon ">
+          <li className="link search-icon" onClick={() => setOpenSearch(true)}>
             <IoSearchSharp
-              class={`fs-4 cursor-pointer ${scrolled ? "text-black" : "text-white"}`}
+              className={`fs-4 cursor-pointer ${scrolled ? "text-black" : "text-white"}`}
             />
           </li>
         </ul>
@@ -156,6 +150,7 @@ const Navbar = () => {
           onClick={hideMenu}
         />
       </div>
+      <HomeSearchBar isOpen={openSearch} onClose={() => setOpenSearch(false)} />
     </nav>
   );
 };
