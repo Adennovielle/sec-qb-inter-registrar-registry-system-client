@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Hero.css";
-import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
-  const navigate = useNavigate();
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffset(window.scrollY * 0.3); // Adjust speed here
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="hero" id="hero">
-      <div className="container  d-flex align-items-center justify-content-center ">
+    <div
+      className="hero"
+      id="hero"
+      style={{
+        backgroundPosition: `center calc(50% + ${offset}px)`,
+      }}
+    >
+      <div className="container d-flex align-items-center justify-content-center">
         <div>
           <p className="hero-center-text fs-1 text-white">
             QB INTER-REGISTRAR REGISTRY SYSTEM

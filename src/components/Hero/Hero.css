@@ -1,15 +1,29 @@
 .hero {
-  min-height: calc(43vh);
+  /* min-height: calc(43vh); */
   /* border: 3px solid red; */
+  /* display: flex; */
+  /* justify-content: space-between;
+  background-color: var(--primary-color);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../assets/login-overlay.png"); */
+  /* background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+}
+.hero {
+  min-height: 43vh;
   display: flex;
   justify-content: space-between;
-  background-color: var(--primary-color);
+  align-items: center;
   background:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("../../assets/login-overlay.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  /* transition: background-position 0.05s linear; */
 }
 .hero .hero-center-text {
   font-size: 60px !important;

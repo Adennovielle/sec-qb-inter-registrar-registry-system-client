@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px 0;
+  margin-top: 80px;
 }
 .login-page form {
   border: 2px solid rgba(0, 0, 0, 0.168);

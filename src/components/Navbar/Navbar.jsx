@@ -7,9 +7,13 @@ import HomeSearchBar from "../HomeSearchBar/HomeSearchBar";
 
 const Navbar = () => {
   const location = useLocation();
+
   const [openSearch, setOpenSearch] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isHomePage = location.pathname === "/";
+  const isWhiteNavbar = scrolled || !isHomePage;
+  const navTextColor = isWhiteNavbar ? "text-dark" : "text-white";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,20 +31,12 @@ const Navbar = () => {
     };
   }, []);
 
-  // const [active, setActive] = useState(
-  //   () => localStorage.getItem("activeNavLink") || "home",
-  // );
-
-  // useEffect(() => {
-  //   localStorage.setItem("activeNavLink", active);
-  // }, [active]);
-
   const hideMenu = () => {
     setShowMenu(!showMenu);
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "nav-bg-white" : ""}`}>
+    <nav className={`navbar ${isWhiteNavbar ? "nav-bg-white" : ""}`}>
       <div className="container nav-container">
         {/* Logo */}
         <Link
@@ -54,95 +50,54 @@ const Navbar = () => {
 
         <ul className={`nav-links ${showMenu ? "showMenu" : ""}`}>
           <li className={`link ${location.pathname === "/" ? "active" : ""}`}>
-            <Link to="/">QBID Search</Link>
+            <Link to="/" className={navTextColor}>
+              QBID Search
+            </Link>
           </li>
-
-          {/* <li
-            onClick={() => setActive("highlights")}
-            className={`link ${active === "highlights" ? "active" : ""}`}
-          >
-            <Link
-              to="/"
-              state={{ scrollTo: "highlights", offset: -30 }}
-              className="reactrouter-link"
-            >
-              Highlights
-            </Link>
-          </li> */}
-
-          {/* <li
-            onClick={() => setActive("testimonials")}
-            className={`link ${active === "testimonials" ? "active" : ""}`}
-          >
-            <Link
-              to="/"
-              state={{ scrollTo: "testimonials", offset: -140 }}
-              className="reactrouter-link"
-            >
-              Testimonials
-            </Link>
-          </li> */}
-
-          {/* <li
-            onClick={() => setActive("MyRegistry")}
-            className={`link ${active === "MyRegistry" ? "active" : ""}`}
-          >
-            <Link
-              to="/"
-              state={{ scrollTo: "My-Registry", offset: -150 }}
-              className="reactrouter-link"
-            >
-              My Registry
-            </Link>
-          </li> */}
 
           <li
             className={`link ${
               location.pathname === "/My-Registry" ? "active" : ""
             }`}
           >
-            <Link to="/My-Registry">My Registry</Link>
+            <Link to="/My-Registry" className={navTextColor}>
+              My Registry
+            </Link>
           </li>
 
-          {/* <li
-            onClick={() => setActive("contact")}
-            className={`link ${active === "contact" ? "active" : ""}`}
+          <li
+            className={`link ${
+              location.pathname === "/submission-portal" ? "active" : ""
+            }`}
+          >
+            <Link to="/submission-portal" className={navTextColor}>
+              Submission Portal
+            </Link>
+          </li>
+
+          <li
+            className={`link ${
+              location.pathname === "/directory" ? "active" : ""
+            }`}
+          >
+            <Link to="/directory" className={navTextColor}>
+              Directory
+            </Link>
+          </li>
+
+          <li
+            className={`link ${location.pathname === "/auth" ? "active" : ""} `}
           >
             <Link
-              to="/"
-              state={{ scrollTo: "footer", offset: -80 }}
-              className="reactrouter-link"
+              to="/auth"
+              className=" text-white"
+              className={`${navTextColor} reactrouter-link`}
             >
-              Contact Us
-            </Link>
-          </li> */}
-          <li
-            className={`link ${
-              location.pathname === "/Submission-Portal" ? "active" : ""
-            }`}
-          >
-            <Link to="/Submission-Portal">Submission Portal</Link>
-          </li>
-
-          <li
-            className={`link ${
-              location.pathname === "/Directory" ? "active" : ""
-            }`}
-          >
-            <Link to="/Directory">Directory</Link>
-          </li>
-
-          <li
-            className={`link ${location.pathname === "/auth" ? "active" : ""}`}
-          >
-            <Link to="/auth" className="reactrouter-link">
               Login
             </Link>
           </li>
           <li className="link search-icon" onClick={() => setOpenSearch(true)}>
-            <IoSearchSharp
-              className={`fs-4 cursor-pointer ${scrolled ? "text-black" : "text-white"}`}
-            />
+            <IoSearchSharp className={`fs-4 cursor-pointer ${navTextColor}`} />
           </li>
         </ul>
         <GiHamburgerMenu

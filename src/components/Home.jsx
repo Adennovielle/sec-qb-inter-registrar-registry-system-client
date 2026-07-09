@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Hero from "./Hero/Hero";
 import QualifiedBuyerVerification from "./QualifiedBuyerVerification/QualifiedBuyerVerification";
-import Testimonials from "./Testimonials/Testimonials";
-import About from "./About/About";
 import { useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
 

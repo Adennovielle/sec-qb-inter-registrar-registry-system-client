@@ -1,48 +1,8 @@
-.menu {
-  /* border: 3px solid red; */
-  min-height: calc(100vh - 80px);
-  padding: 0 50px 50px 50px;
-}
-.menu h1 {
-  font-size: var(--subtitle);
-  padding-top: 20px;
-  letter-spacing: 5px;
-}
-.menu p {
-  font-size: 20px;
-  letter-spacing: 5px;
-}
-.menu .menu-cards {
-  /* border: 4px solid blue; */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
-}
-.menu .menu-card {
-  /* border: 3px solid rgb(13, 255, 0); */
-  width: unset;
-  border-radius: 15px;
+#directory {
+  /* border: 4px solid red; */
+  min-height: 50vh;
+  margin-top: 80px;
   display: flex;
-  flex-direction: column;
-}
-.menu-card .card .card-body .card-title {
-  /* border: 3px solid rgb(246, 12, 0); */
-  font-size: 17px;
-}
-.menu-card .menu-card-img {
-  /* border: 3px solid rgb(246, 12, 0); */
-  display: flex;
-  justify-content: center;
-  border-radius: unset;
-  padding-top: 10px;
-}
-.menu-card .menu-card-img img {
-  height: 160px;
-  width: 75%;
   align-items: center;
-  /* border: 3px solid green; */
-  border-radius: 20px;
-}
-.menu-card .menu-card-order {
-  padding: 18px;
+  justify-content: center;
 }

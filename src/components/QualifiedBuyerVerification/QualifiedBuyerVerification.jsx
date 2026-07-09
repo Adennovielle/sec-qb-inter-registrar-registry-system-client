@@ -31,12 +31,12 @@ const QualifiedBuyerVerification = () => {
         Number (QBID) below:
       </div>
 
-      <div className="mt-5 d-flex justify-content-center extra-padding">
+      <div className="mt-5 d-flex justify-content-center extra-padding ">
         <div
           className="shadow-lg border-0 rounded-3 "
           style={{ width: "100%", maxWidth: "1000px" }}
         >
-          <div className="card-body p-4">
+          <div className="card-body p-4 bg-light rounded-2">
             <h4 className="fw-bold mb-1">
               <span className="position-relative">
                 Qualified Buyer Verification

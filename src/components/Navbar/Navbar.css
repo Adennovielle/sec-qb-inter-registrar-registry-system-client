@@ -17,9 +17,7 @@ li {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.navbar .nav-links a {
-  color: white !important;
-}
+
 .navbar .nav-links li .search-icon {
   background-color: green;
 }
